@@ -1,3 +1,52 @@
 ---
-
+const links = [
+    {link: "news", title: "Новини"},
+    {link: "educational", title: "Навчальні матеріалии"},
+    {link: "about", title: "Про нас"}
+]
 ---
+
+
+<nav>
+    <a href="/">
+        <img src="https://static.klasnaocinka.com.ua/design/16419/parts/1701711975552657357_1.png" style="height: 100%"/>
+    </a>
+
+
+    <ul>
+        {links.map(link =>
+                <li class="link">
+                    <a href={link.link}>{link.title}</a>
+                </li>)}
+    </ul>
+</nav>
+<style>
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+        max-width: 1300px;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .link {
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            margin: 1em;
+        }
+    }
+
+    ul {
+        display: flex;
+    }
+</style>
