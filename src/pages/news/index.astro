@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import {getCollection} from "astro:content";
+
+const posts = await getCollection("news");
+console.log(typeof posts);
+posts.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+---
+
+<Layout title="Новини">
+    <h1>Новини</h1>
+
+    {
+        posts.map((post) => (
+                <article>
+                    <h2>
+                        <a href={`/news/${post.slug}`}>{post.data.title}</a>
+                    </h2>
+                    <p>{post.data.description}</p>
+                </article>
+        ))
+    }
+</Layout>

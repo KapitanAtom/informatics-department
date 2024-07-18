@@ -9,14 +9,15 @@ const links = [
 
 <nav>
     <a href="/">
-        <img src="https://static.klasnaocinka.com.ua/design/16419/parts/1701711975552657357_1.png" style="height: 100%"/>
+        <img src="/assets/1701711975552657357_1.png"
+             style="height: 100%"/>
     </a>
 
 
     <ul>
         {links.map(link =>
                 <li class="link">
-                    <a href={link.link}>{link.title}</a>
+                    <a href=`/${link.link}`>{link.title}</a>
                 </li>)}
     </ul>
 </nav>

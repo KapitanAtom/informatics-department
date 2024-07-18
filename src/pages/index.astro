@@ -1,20 +1,62 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TeacherCard from "../components/TeacherCard.astro";
 ---
 
 <Layout title="Головна">
     <h1>Головна</h1>
+
+    <div class="cathedra-about-container">
+        <div class="cathedra-image">
+
+        </div>
+        <div class="cathedra-about">
+            <h1>Кафедра інформатики 97 ліцею</h1>
+            <p>Какой-то интересный слоган</p>
+        </div>
+    </div>
+
+    <div class="teachers-container">
+        <TeacherCard name="Трипутень Максим" position="Вчитель" desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Кружко Сергій" position="Вчитель 1 категорії" desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Благій Олена" position="Вчитель 2 категорії" desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Рисікова Вікторія" position="Вчитель 3 категорії" desc="Какой-то важный текст"></TeacherCard>
+    </div>
+
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
+    main {
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .cathedra-about-container {
+        position: relative;
+
+        .cathedra-image {
+            width: 100%;
+            height: 300px;
+            background: lightblue
+        }
+
+        .cathedra-about {
+            position: absolute;
+            right: 20px;
+            top: 0;
+        }
+    }
+
+    .teachers-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        margin: 20px 0;
+    }
 
 </style>

@@ -1,0 +1,54 @@
+---
+interface Props {
+    name: string;
+    position: string;
+    desc: string;
+}
+
+const {name, position, desc} = Astro.props;
+---
+
+<div class="card">
+    <img src="/assets/smiley-man-relaxing-outdoors.jpg" class="teacher-image"/>
+    <div class="description">
+        <p class="name">{name}</p>
+        <p class="position">{position}</p>
+        <p class="desc">{desc}</p>
+    </div>
+</div>
+
+<style>
+    .card {
+        width: 100%;
+        max-width: 320px;
+        height: max-content;
+        position: relative;
+
+        .teacher-image {
+            width: 100%;
+            background: lightblue;
+        }
+
+        .description {
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            right: 10px;
+            background: white;
+            text-align: center;
+
+            .name {
+                color: gray;
+            }
+
+            .position {
+                color: blue;
+                font-weight: bold;
+            }
+
+            .desc {
+               font-style: italic;
+            }
+        }
+    }
+</style>
