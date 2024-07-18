@@ -1,4 +1,5 @@
 ---
+import {MAIN_HOST} from "../constants/routes";
 const links = [
     {link: "news", title: "Новини"},
     {link: "educational", title: "Навчальні матеріалии"},
@@ -8,8 +9,8 @@ const links = [
 
 
 <nav>
-    <a href="/">
-        <img src="/assets/1701711975552657357_1.png"
+    <a href=`/${MAIN_HOST}/`>
+        <img src=`assets/1701711975552657357_1.png`
              style="height: 100%"/>
     </a>
 
@@ -17,7 +18,7 @@ const links = [
     <ul>
         {links.map(link =>
                 <li class="link">
-                    <a href=`/${link.link}`>{link.title}</a>
+                    <a href=`/${MAIN_HOST}/${link.link}`>{link.title}</a>
                 </li>)}
     </ul>
 </nav>

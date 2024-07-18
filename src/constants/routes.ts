@@ -1,0 +1,1 @@
+export const MAIN_HOST = import.meta.env.PROD ? "informatics-department" : ""

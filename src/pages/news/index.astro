@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 import {getCollection} from "astro:content";
+import {MAIN_HOST} from "../../constants/routes";
 
 const posts = await getCollection("news");
 console.log(typeof posts);
@@ -15,7 +16,7 @@ posts.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
         posts.map((post) => (
                 <article>
                     <h2>
-                        <a href={`/news/${post.slug}`}>{post.data.title}</a>
+                        <a href={`/${MAIN_HOST}/news/${post.slug}`}>{post.data.title}</a>
                     </h2>
                     <p>{post.data.description}</p>
                 </article>
