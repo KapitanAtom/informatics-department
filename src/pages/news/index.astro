@@ -16,7 +16,7 @@ posts.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
         posts.map((post) => (
                 <article>
                     <h2>
-                        <a href={`/${MAIN_HOST}/news/${post.slug}`}>{post.data.title}</a>
+                        <a href={`news/${post.slug}`}>{post.data.title}</a>
                     </h2>
                     <p>{post.data.description}</p>
                 </article>

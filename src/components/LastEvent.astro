@@ -1,0 +1,78 @@
+---
+interface Props {
+    name: string;
+    date: string;
+    desc: string;
+}
+
+const {name, date, desc} = Astro.props;
+---
+
+<div class="event-container">
+    <div class="event-images">
+        <img src="assets/free-images.jpg" class="event-image"></img>
+        <img src="assets/free-images.jpg" class="event-image"></img>
+        <img src="assets/free-images.jpg" class="event-image"></img>
+        <img src="assets/free-images.jpg" class="event-image"></img>
+    </div>
+
+    <div class="text">
+        <h1 class="t-h1">{name}</h1>
+        <p class="t-p">{desc}</p>
+        <a href="#" class="button-read">Прочитати повністю</a>
+    </div>
+
+</div>
+
+<style>
+
+    .event-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .event-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .event-image {
+        min-height: 150px;
+        width: 100%;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .t-h1 {
+        margin: 0;
+        font-weight: 400;
+        font-size: 38px;
+    }
+
+    .t-p {
+        font-size: 18px;
+    }
+
+    .button-read {
+        background-color: #66a5ad;
+        color: #dae6ea;
+        width: max-content;
+        margin: 0 auto;
+        border-radius: 5px;
+        padding: 5px;
+        text-decoration: none;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            text-decoration: underline;
+        }
+    }
+</style>

@@ -1,62 +1,75 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TeacherCard from "../components/TeacherCard.astro";
+import LastEvent from "../components/LastEvent.astro";
+import TeachersGrid from "../components/TeachersGrid.astro";
 ---
 
 <Layout title="Головна">
-    <h1>Головна</h1>
-
     <div class="cathedra-about-container">
-        <div class="cathedra-image">
+        <img src="assets/space-desk-laptop-notebook.jpg" class="cathedra-image"/>
 
-        </div>
         <div class="cathedra-about">
-            <h1>Кафедра інформатики 97 ліцею</h1>
-            <p>Какой-то интересный слоган</p>
+            <h1>Дніпровський ліцей № 97 Дніпровської міської ради</h1>
+            <h1>Кафедра інформатики</h1>
+            <!--<p>Какой-то интересный слоган</p>-->
         </div>
     </div>
 
-    <div class="teachers-container">
-        <TeacherCard name="Трипутень Максим" position="Вчитель" desc="Какой-то важный текст"></TeacherCard>
-        <TeacherCard name="Кружко Сергій" position="Вчитель 1 категорії" desc="Какой-то важный текст"></TeacherCard>
-        <TeacherCard name="Благій Олена" position="Вчитель 2 категорії" desc="Какой-то важный текст"></TeacherCard>
-        <TeacherCard name="Рисікова Вікторія" position="Вчитель 3 категорії" desc="Какой-то важный текст"></TeacherCard>
+    <div class="section-container last-event">
+        <h1>Останній захід</h1>
+        <div class="limiter">
+            <LastEvent name="Тиждень робототехніки"
+                       desc="Ми провели тиждень робототехніки для 5-11 классів"></LastEvent>
+        </div>
     </div>
 
+    <div class="section-container">
+        <h1>
+            Педагогічний колектив
+        </h1>
+        <TeachersGrid></TeachersGrid>
+    </div>
 </Layout>
 
 <style>
-    main {
-        margin: auto;
-        padding: 1rem;
-        width: 800px;
-        max-width: calc(100% - 2rem);
-        color: white;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-
     .cathedra-about-container {
         position: relative;
 
         .cathedra-image {
             width: 100%;
-            height: 300px;
-            background: lightblue
+            max-height: 300px;
+            object-fit: cover;
         }
 
         .cathedra-about {
             position: absolute;
-            right: 20px;
-            top: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
         }
     }
 
-    .teachers-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 20px;
-        margin: 20px 0;
+    .limiter {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: block;
     }
 
+    .last-event {
+        background: #003b46;
+        color: #dae6ea;
+
+        h1 {
+            margin-top: 0;
+        }
+    }
+
+    .section-container {
+        width: calc(100% - 20px);
+        text-align: center;
+        padding: 40px 10px;
+    }
 </style>

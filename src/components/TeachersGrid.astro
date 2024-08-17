@@ -1,0 +1,25 @@
+---
+import TeacherCard from "./TeacherCard.astro";
+---
+
+<div class="teachers-container">
+    <TeacherCard name="Трипутень Максим" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+    <TeacherCard name="Кружко Сергій" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+    <TeacherCard name="Благій Олена" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+</div>
+
+<div class="teachers-container">
+    <TeacherCard name="Рисікова Вікторія" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+    <TeacherCard name="Полішко Сергій" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+</div>
+
+
+<style>
+    .teachers-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+</style>
