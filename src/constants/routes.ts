@@ -1,1 +1,1 @@
-export const MAIN_HOST = import.meta.env.PROD ? "informatics-department" : "http://localhost:4321"
+export const MAIN_HOST = import.meta.env.PROD ? "https://kapitanatom.github.io/informatics-department" : "http://localhost:4321"
