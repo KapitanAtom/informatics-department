@@ -9,14 +9,14 @@ const links = [
 
 <nav>
     <a href=`/`>
-        <img src=`assets/1701711975552657357_1.png`
+        <img src=`${MAIN_HOST}/assets/1701711975552657357_1.png`
              style="height: 50px"/>
     </a>
 
     <ul>
         {links.map(link =>
                 <li class="link">
-                    <a href=`${link.link}`>{link.title}</a>
+                    <a href=`${MAIN_HOST}/${link.link}`>{link.title}</a>
                 </li>)}
     </ul>
 </nav>

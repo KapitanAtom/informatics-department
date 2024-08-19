@@ -2,6 +2,7 @@
 title: "Тайны CSS Flexbox"
 description: "Понимание гибкого расположения и его применение в современной веб-разработке."
 publishedAt: "01/22/2023"
+image: "week7_1100.jpg"
 ---
 
 # Тайны CSS Flexbox

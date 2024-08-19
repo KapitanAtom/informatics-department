@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import TeacherCard from "../components/TeacherCard.astro";
 import LastEvent from "../components/LastEvent.astro";
 import TeachersGrid from "../components/TeachersGrid.astro";
 ---
@@ -10,17 +9,15 @@ import TeachersGrid from "../components/TeachersGrid.astro";
         <img src="assets/space-desk-laptop-notebook.jpg" class="cathedra-image"/>
 
         <div class="cathedra-about">
-            <h1>Дніпровський ліцей № 97 Дніпровської міської ради</h1>
-            <h1>Кафедра інформатики</h1>
-            <!--<p>Какой-то интересный слоган</p>-->
+            <h2 class="place">Дніпровський ліцей № 97 Дніпровської міської ради</h2>
+            <h1 class="cathedra">Кафедра інформатики</h1>
         </div>
     </div>
 
     <div class="section-container last-event">
         <h1>Останній захід</h1>
         <div class="limiter">
-            <LastEvent name="Тиждень робототехніки"
-                       desc="Ми провели тиждень робототехніки для 5-11 классів"></LastEvent>
+            <LastEvent/>
         </div>
     </div>
 
@@ -38,17 +35,22 @@ import TeachersGrid from "../components/TeachersGrid.astro";
 
         .cathedra-image {
             width: 100%;
-            max-height: 300px;
+            height: clamp(150px, 15vw, 300px);
             object-fit: cover;
         }
 
         .cathedra-about {
             position: absolute;
             top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
             text-align: center;
             color: white;
+
+            .place {
+                font-weight: 400;
+            }
         }
     }
 

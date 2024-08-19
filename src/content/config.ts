@@ -6,6 +6,7 @@ const news = defineCollection({
         title: z.string(),
         description: z.string(),
         publishedAt: z.string().transform((val) => new Date(val)),
+        image: z.string()
     }),
 });
 

@@ -20,8 +20,6 @@ const {title} = Astro.props;
 </head>
 <body>
 
-<!---->
-
 <div class="main-scroll">
     <Header></Header>
     <div class="main">
@@ -47,27 +45,56 @@ const {title} = Astro.props;
 
     html {
         font-family: system-ui, sans-serif;
-        //background: #13151a;
         background-size: 224px;
         height: 100%;
     }
 
     .main-scroll {
-        //margin-top: 70px;
         display: flex;
         flex-direction: column;
         min-height: 100%;
-    }
 
-    .main {
-        //display: inline-flex;
-        flex: 1 1;
-        padding: 0 10px;
+        .main {
+            flex: 1 1;
+        }
     }
 
     body {
         margin: 0;
         background: #F5F5F5;
         height: 100%;
+    }
+
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .page-margin {
+        margin: 0 10px;
+    }
+
+    @media screen and (max-width: 991px) {
+        h1 {
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
     }
 </style>

@@ -3,23 +3,88 @@ import Layout from "../../layouts/Layout.astro";
 
 import {getCollection} from "astro:content";
 import {MAIN_HOST} from "../../constants/routes";
+import {formatDate} from "../../helper/dateFormatter";
 
 const posts = await getCollection("news");
-console.log(typeof posts);
+
 posts.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 ---
 
 <Layout title="Новини">
-    <h1>Новини</h1>
+    <div class="page-margin">
+        <h1>Новини</h1>
 
-    {
-        posts.map((post) => (
-                <article>
-                    <h2>
-                        <a href={`news/${post.slug}`}>{post.data.title}</a>
-                    </h2>
-                    <p>{post.data.description}</p>
-                </article>
-        ))
-    }
+        {
+            posts.map((post) => (
+                    <article style="margin: 10px 0">
+                        <a href={`${MAIN_HOST}/news/${post.slug}`} class="inherit-link">
+                            <div class="article-grid">
+                                <img src=`${MAIN_HOST}/assets/${post.data.image}` alt=`${post.data.title}` class="article-image">
+
+                                <div>
+                                    <h2 style="margin: 0">
+                                        {post.data.title}
+                                    </h2>
+                                    <p class="desc">{post.data.description}</p>
+                                    <p class="date">{formatDate(post.data.publishedAt)}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+            ))
+        }
+    </div>
 </Layout>
+
+<style>
+    .inherit-link {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            opacity: 80%;
+            color: gray;
+        }
+    }
+
+    .article-grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        align-items: center;
+
+        .article-image {
+            max-width: clamp(150px, 15vw, 300px);
+            max-height: clamp(100px, 15vw, 150px);
+        }
+    }
+
+    .desc{
+        font-size: 18px;
+    }
+
+    .date {
+        font-size: 16px;
+        color: #535353;
+    }
+
+    @media screen and (max-width: 991px) {
+        .desc{
+            font-size: 16px;
+        }
+
+        .date {
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .desc{
+            font-size: 14px;
+        }
+
+        .date {
+            font-size: 12px;
+        }
+    }
+</style>

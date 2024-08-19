@@ -2,24 +2,79 @@
 import TeacherCard from "./TeacherCard.astro";
 ---
 
-<div class="teachers-container">
-    <TeacherCard name="Трипутень Максим" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
-    <TeacherCard name="Кружко Сергій" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
-    <TeacherCard name="Благій Олена" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+<div class="teachers-flex-container">
+    <div class="grid-item">
+        <TeacherCard name="Трипутень Максим" position="Вчитель інформатики"
+                     desc="Какой-то важный текст"></TeacherCard>
+    </div>
+    <div class="grid-item">
+        <TeacherCard name="Кружко Сергій" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+    </div>
+    <div class="grid-item">
+        <TeacherCard name="Благій Олена" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+    </div>
 </div>
 
-<div class="teachers-container">
-    <TeacherCard name="Рисікова Вікторія" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
-    <TeacherCard name="Полішко Сергій" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+<div class="teachers-flex-container" style="margin-top: 20px">
+    <div class="grid-item">
+        <TeacherCard name="Рисікова Вікторія" position="Вчитель інформатики"
+                     desc="Какой-то важный текст"></TeacherCard>
+    </div>
+    <div class="grid-item">
+        <TeacherCard name="Полішко Сергій" position="Вчитель інформатики"
+                     desc="Какой-то важный текст"></TeacherCard>
+    </div>
 </div>
 
+<div class="teachers-grid">
+    <div class="grid-item">
+        <TeacherCard name="Трипутень Максим" position="Вчитель інформатики"
+                     desc="Какой-то важный текст"></TeacherCard>
+    </div>
+    <div class="grid-item">
+        <TeacherCard name="Кружко Сергій" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+    </div>
+    <div class="grid-item">
+        <TeacherCard name="Благій Олена" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+    </div>
+    <div class="grid-item">
+        <TeacherCard name="Рисікова Вікторія" position="Вчитель інформатики"
+                     desc="Какой-то важный текст"></TeacherCard>
+    </div>
+    <div class="grid-item">
+        <TeacherCard name="Полішко Сергій" position="Вчитель інформатики"
+                     desc="Какой-то важный текст"></TeacherCard>
+    </div>
+</div>
 
 <style>
-    .teachers-container {
+    .teachers-flex-container {
         display: flex;
         gap: 20px;
         justify-content: center;
-        margin: 20px 0;
         padding: 0 20px;
+
+        .grid-item{
+            flex: 0.33;
+            max-width: 320px;
+            min-width: 200px;
+        }
+    }
+
+    .teachers-grid{
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .teachers-flex-container {
+            display: none;
+        }
+
+        .teachers-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            gap: 10px;
+        }
     }
 </style>

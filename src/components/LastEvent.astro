@@ -1,34 +1,35 @@
 ---
-interface Props {
-    name: string;
-    date: string;
-    desc: string;
-}
+import {getCollection} from "astro:content";
+import {MAIN_HOST} from "../constants/routes";
 
-const {name, date, desc} = Astro.props;
+const posts = await getCollection("news");
+
+posts.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const post = posts[0]
 ---
 
 <div class="event-container">
     <div class="event-images">
-        <img src="assets/free-images.jpg" class="event-image"></img>
-        <img src="assets/free-images.jpg" class="event-image"></img>
-        <img src="assets/free-images.jpg" class="event-image"></img>
-        <img src="assets/free-images.jpg" class="event-image"></img>
+        <img src=`${MAIN_HOST}/assets/free-images.jpg` class="event-image"></img>
+        <img src=`${MAIN_HOST}/assets/free-images.jpg` class="event-image"></img>
+        <img src=`${MAIN_HOST}/assets/free-images.jpg` class="event-image"></img>
+        <img src=`${MAIN_HOST}/assets/free-images.jpg` class="event-image"></img>
     </div>
 
-    <div class="text">
-        <h1 class="t-h1">{name}</h1>
-        <p class="t-p">{desc}</p>
-        <a href="#" class="button-read">Прочитати повністю</a>
+    <div class="info">
+        <h1 class="t-h1">{post.data.title}</h1>
+        <p class="t-p">{post.data.description}</p>
+        <a href=`${MAIN_HOST}/news/${post.slug}` class="button-read bt-cp">Прочитати повністю</a>
     </div>
-
 </div>
+
+<a href=`${MAIN_HOST}/news/${post.slug}` class="button-read bt-mobile">Прочитати повністю</a>
 
 <style>
 
     .event-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
         gap: 20px;
     }
 
@@ -37,27 +38,34 @@ const {name, date, desc} = Astro.props;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 10px;
+        flex: 1;
+
+        .event-image {
+            width: 100%;
+        }
     }
 
-    .event-image {
-        min-height: 150px;
-        width: 100%;
-    }
-
-    .text {
+    .info {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        flex: 1;
+
+        .t-h1 {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .t-p {
+            font-size: 22px;
+        }
     }
 
-    .t-h1 {
-        margin: 0;
-        font-weight: 400;
-        font-size: 38px;
+    .bt-cp{
+        display: block;
     }
-
-    .t-p {
-        font-size: 18px;
+    .bt-mobile{
+        display: none;
     }
 
     .button-read {
@@ -73,6 +81,45 @@ const {name, date, desc} = Astro.props;
             transform: scale(1.1);
             transition: all 0.3s ease;
             text-decoration: underline;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .info {
+            .t-p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .event-container {
+            flex-direction: column-reverse;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            flex: 1;
+
+            .t-h1 {
+                margin: 0;
+                font-weight: 400;
+            }
+
+            .t-p {
+                font-size: 18px;
+            }
+        }
+
+        .bt-cp{
+            display: none;
+        }
+
+        .bt-mobile{
+            display: block;
+            margin-top: 10px;
         }
     }
 </style>

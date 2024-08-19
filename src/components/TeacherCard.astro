@@ -1,5 +1,4 @@
 ---
-import {MAIN_HOST} from "../constants/routes";
 interface Props {
     name: string;
     position: string;
@@ -13,8 +12,8 @@ const {name, position, desc} = Astro.props;
     <img src=`assets/smiley-man-relaxing-outdoors.jpg` class="teacher-image"/>
     <div class="description">
         <p class="name">{name}</p>
-        <p class="position">{position}</p>
-        <p class="desc">{desc}</p>
+        <!--<p class="position">{position}</p>-->
+        <!--<p class="desc">{desc}</p>-->
     </div>
 </div>
 
@@ -48,7 +47,7 @@ const {name, position, desc} = Astro.props;
             }
 
             .desc {
-               font-style: italic;
+                font-style: italic;
             }
         }
     }
