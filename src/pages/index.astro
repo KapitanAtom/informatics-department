@@ -2,11 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import LastEvent from "../components/LastEvent.astro";
 import TeachersGrid from "../components/TeachersGrid.astro";
+import {MAIN_HOST} from "../constants/routes";
 ---
 
 <Layout title="Головна">
     <div class="cathedra-about-container">
-        <img src="assets/space-desk-laptop-notebook.jpg" class="cathedra-image"/>
+        <img src=`${MAIN_HOST}/assets/space-desk-laptop-notebook.jpg` class="cathedra-image"/>
 
         <div class="cathedra-about">
             <h2 class="place">Дніпровський ліцей № 97 Дніпровської міської ради</h2>

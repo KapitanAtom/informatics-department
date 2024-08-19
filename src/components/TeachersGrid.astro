@@ -4,46 +4,40 @@ import TeacherCard from "./TeacherCard.astro";
 
 <div class="teachers-flex-container">
     <div class="grid-item">
-        <TeacherCard name="Трипутень Максим" position="Вчитель інформатики"
-                     desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Трипутень Максим" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
     <div class="grid-item">
-        <TeacherCard name="Кружко Сергій" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Кружко Сергій" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
     <div class="grid-item">
-        <TeacherCard name="Благій Олена" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Благій Олена" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
 </div>
 
 <div class="teachers-flex-container" style="margin-top: 20px">
     <div class="grid-item">
-        <TeacherCard name="Рисікова Вікторія" position="Вчитель інформатики"
-                     desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Рисікова Вікторія" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
     <div class="grid-item">
-        <TeacherCard name="Полішко Сергій" position="Вчитель інформатики"
-                     desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Полішко Сергій" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
 </div>
 
 <div class="teachers-grid">
     <div class="grid-item">
-        <TeacherCard name="Трипутень Максим" position="Вчитель інформатики"
-                     desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Трипутень Максим" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
     <div class="grid-item">
-        <TeacherCard name="Кружко Сергій" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Кружко Сергій" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
     <div class="grid-item">
-        <TeacherCard name="Благій Олена" position="Вчитель інформатики" desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Благій Олена" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
     <div class="grid-item">
-        <TeacherCard name="Рисікова Вікторія" position="Вчитель інформатики"
-                     desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Рисікова Вікторія" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
     <div class="grid-item">
-        <TeacherCard name="Полішко Сергій" position="Вчитель інформатики"
-                     desc="Какой-то важный текст"></TeacherCard>
+        <TeacherCard name="Полішко Сергій" img="smiley-man-relaxing-outdoors.jpg"></TeacherCard>
     </div>
 </div>
 
@@ -54,14 +48,14 @@ import TeacherCard from "./TeacherCard.astro";
         justify-content: center;
         padding: 0 20px;
 
-        .grid-item{
+        .grid-item {
             flex: 0.33;
             max-width: 320px;
             min-width: 200px;
         }
     }
 
-    .teachers-grid{
+    .teachers-grid {
         display: none;
     }
 
@@ -70,7 +64,7 @@ import TeacherCard from "./TeacherCard.astro";
             display: none;
         }
 
-        .teachers-grid{
+        .teachers-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             justify-items: center;

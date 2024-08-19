@@ -1,19 +1,17 @@
 ---
+import {MAIN_HOST} from "../constants/routes";
 interface Props {
     name: string;
-    position: string;
-    desc: string;
+    img: string
 }
 
-const {name, position, desc} = Astro.props;
+const {name, img} = Astro.props;
 ---
 
 <div class="card">
-    <img src=`assets/smiley-man-relaxing-outdoors.jpg` class="teacher-image"/>
+    <img src=`${MAIN_HOST}/assets/${img}` class="teacher-image"/>
     <div class="description">
         <p class="name">{name}</p>
-        <!--<p class="position">{position}</p>-->
-        <!--<p class="desc">{desc}</p>-->
     </div>
 </div>
 
@@ -39,15 +37,6 @@ const {name, position, desc} = Astro.props;
 
             .name {
                 color: gray;
-            }
-
-            .position {
-                color: blue;
-                font-weight: bold;
-            }
-
-            .desc {
-                font-style: italic;
             }
         }
     }
